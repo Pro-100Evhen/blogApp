@@ -5,36 +5,37 @@ const POSTS_URL = "https://jsonplaceholder.typicode.com/posts?_limit=10";
 
 const initialState = {
    posts: [],
-   status: "idle", // idle, loading, succeeded, faild
-   errors: null,
+   status: "idle", // idle, loading, succeeded, failed
+   error: null, // Очищено
 };
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-   try {
-      const response = await axios.get(POSTS_URL);
-      return response.data;
-   } catch (error) {
-      return error.message;
-   }
+   const response = await axios.get(POSTS_URL);
+   return response.data;
 });
 
 const postsSlice = createSlice({
    name: "posts",
    initialState,
    reducers: {},
-   extraReducers(builder) {
+   extraReducers: (builder) => {
       builder
          .addCase(fetchPosts.pending, (state) => {
             state.status = "loading";
+            state.error = null;
          })
          .addCase(fetchPosts.fulfilled, (state, action) => {
             state.status = "succeeded";
+            console.log("Fetched data:", action.payload);
             state.posts = action.payload;
          })
          .addCase(fetchPosts.rejected, (state, action) => {
-            state.errors = action.payload;
+            state.status = "failed";
+            state.error = action.error.message;
          });
    },
 });
+
+export const postsSelector = (state) => state.posts.posts;
 
 export const postsReducer = postsSlice.reducer;

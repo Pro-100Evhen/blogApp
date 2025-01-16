@@ -4,11 +4,10 @@ import Header from "./Header";
 
 const Layout = () => {
    return (
-      <>
-         <div className="bg-cyan-900 w-9"></div>
+      <main className="bg-gray-700">
          <Header />
          <Outlet />
-      </>
+      </main>
    );
 };
 
