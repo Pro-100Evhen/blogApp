@@ -12,10 +12,9 @@ export const SinglePost = () => {
    }
 
    return (
-      <div>
-         <h1>Post Details</h1>
-         <p>This is the content for post ID: {post.title}</p>
-         <p>{post.body}</p>
+      <div className="mx-auto max-w-screen-xl  py-7  h-[100vh] text-white  flex flex-col">
+         <h3 className="text-4xl mb-5">Post title: {post.title}</h3>
+         <p className="text-xl">Post content: {post.body}</p>
       </div>
    );
 };
