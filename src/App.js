@@ -9,7 +9,7 @@ function App() {
       <Routes>
          <Route path="/" element={<Layout />}>
             <Route index element={<PostsRow />} />
-            <Route path="post/:postTitle" element={<SinglePost />} />
+            <Route path="post/:postId" element={<SinglePost />} />
             <Route path="*" element={<p>Page not found</p>} />
          </Route>
       </Routes>

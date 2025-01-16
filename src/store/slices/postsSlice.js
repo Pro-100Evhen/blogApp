@@ -6,7 +6,7 @@ const POSTS_URL = "https://jsonplaceholder.typicode.com/posts?_limit=10";
 const initialState = {
    posts: [],
    status: "idle", // idle, loading, succeeded, failed
-   error: null, // Очищено
+   error: null,
 };
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -36,7 +36,7 @@ const postsSlice = createSlice({
 });
 
 export const postsSelector = (state) => state.posts.posts;
-export const selectPostBytitle = (state, title) =>
-   state.posts.posts.find((post) => post.title === title);
+export const selectPostById = (state, postId) =>
+   state.posts.posts.find((post) => post.id === postId);
 
 export const postsReducer = postsSlice.reducer;

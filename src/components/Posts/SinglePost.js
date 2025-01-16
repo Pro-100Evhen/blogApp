@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { selectPostBytitle } from "../../store/slices/postsSlice";
+import { selectPostById } from "../../store/slices/postsSlice";
 
 export const SinglePost = () => {
-   const { postTitle } = useParams();
-   const post = useSelector((state) => selectPostBytitle(state, postTitle));
+   const { postId } = useParams();
+   const post = useSelector((state) =>
+      selectPostById(state, parseInt(postId, 10))
+   );
 
    if (!post) {
       return <p>Post not found!</p>;
