@@ -36,7 +36,7 @@ const PostsList = () => {
                      <p className="mb-2">{post.body}</p>
                      <Link
                         className="underline hover:no-underline"
-                        to={`/post/${post.id}`}
+                        to={`/post/${post.title}`}
                      >
                         Read more
                      </Link>

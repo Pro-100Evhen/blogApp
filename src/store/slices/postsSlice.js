@@ -37,5 +37,7 @@ const postsSlice = createSlice({
 });
 
 export const postsSelector = (state) => state.posts.posts;
+export const selectPostBytitle = (state, title) =>
+   state.posts.posts.find((post) => post.title === title);
 
 export const postsReducer = postsSlice.reducer;
