@@ -5,9 +5,7 @@ import { selectPostById } from "../../store/slices/postsSlice";
 
 export const SinglePost = () => {
    const { postId } = useParams();
-   const post = useSelector((state) =>
-      selectPostById(state, parseInt(postId, 10))
-   );
+   const post = useSelector((state) => selectPostById(state, postId));
 
    if (!post) {
       return <p>Post not found!</p>;

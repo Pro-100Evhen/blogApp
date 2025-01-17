@@ -1,6 +1,7 @@
 import React from "react";
 import PostsList from "./PostList";
 import AddPostFom from "./AddPostFom";
+import UsersList from "../Users/UsersList";
 
 const PostsRow = () => {
    return (
@@ -10,6 +11,7 @@ const PostsRow = () => {
          </div>
          <div className="w-2/5 h-full">
             <AddPostFom />
+            <UsersList />
          </div>
       </div>
    );

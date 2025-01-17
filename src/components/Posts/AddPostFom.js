@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../store/slices/postsSlice";
+import { v4 as uuidv4 } from "uuid";
 
 const AddPostFom = () => {
    const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const AddPostFom = () => {
 
    function addPostHandler(event) {
       event.preventDefault();
-      dispatch(addPost({ id: 102, title: postTitle, body: postContent }));
+      dispatch(addPost({ id: uuidv4(), title: postTitle, body: postContent }));
       setPostTitle("");
       setPostContent("");
    }
