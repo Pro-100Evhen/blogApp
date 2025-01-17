@@ -17,7 +17,11 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
 const postsSlice = createSlice({
    name: "posts",
    initialState,
-   reducers: {},
+   reducers: {
+      addPost(state, action) {
+         state.posts = [action.payload, ...state.posts];
+      },
+   },
    extraReducers: (builder) => {
       builder
          .addCase(fetchPosts.pending, (state) => {
@@ -35,6 +39,7 @@ const postsSlice = createSlice({
    },
 });
 
+export const { addPost } = postsSlice.actions;
 export const postsSelector = (state) => state.posts.posts;
 export const selectPostById = (state, postId) =>
    state.posts.posts.find((post) => post.id === postId);
