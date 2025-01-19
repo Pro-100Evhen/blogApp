@@ -28,7 +28,7 @@ const SingleUser = () => {
             </p>
          </div>
 
-         <div className="flex gap-4 flex-col">
+         <div className="flex gap-4 flex-col mx-auto max-w-screen-xl  py-2">
             {userPosts.length > 0 && (
                <h2 className="text-white font-semibold mb-5 text-4xl">
                   User Posts:
