@@ -2,7 +2,7 @@
    "name": "react-clear-template",
    "version": "0.1.0",
    "private": true,
-   "homepage": "https://github.com/Pro-100Evhen/blogApp",
+   "homepage": "https://pro-100evhen.github.io/blogApp/",
    "dependencies": {
       "@reduxjs/toolkit": "^2.5.0",
       "@testing-library/jest-dom": "^5.17.0",
