@@ -15,7 +15,10 @@ const PostItem = ({ id, title, body }) => {
             <p className="mb-2">Author: user</p>
          )}
 
-         <Link className="underline hover:no-underline" to={`/post/${id}`}>
+         <Link
+            className="underline hover:no-underline"
+            to={`/blogApp/post/${id}`}
+         >
             Read more
          </Link>
       </div>

@@ -13,7 +13,7 @@ const UserFilter = ({ id, name, username, email }) => {
                <p className="mb-2">Email: {email}</p>
                <Link
                   className="underline hover:no-underline"
-                  to={`/user/${id}`}
+                  to={`/blogApp/user/${id}`}
                >
                   Read more
                </Link>
