@@ -8,10 +8,10 @@ import SingleUser from "./components/Users/SingleUser";
 function App() {
    return (
       <Routes>
-         <Route path="/" element={<Layout />}>
+         <Route path="/blogApp/" element={<Layout />}>
             <Route index element={<PostsRow />} />
-            <Route path="post/:postId" element={<SinglePost />} />
-            <Route path="user/:userId" element={<SingleUser />} />
+            <Route path="/blogApp/post/:postId" element={<SinglePost />} />
+            <Route path="/blogApp/user/:userId" element={<SingleUser />} />
             <Route path="*" element={<p>Page not found</p>} />
          </Route>
       </Routes>
