@@ -14,11 +14,15 @@ const UsersList = () => {
    const users = useSelector(usersSelector);
    const status = useSelector((state) => state.users.status);
    if (status === "loading") {
-      return <p>Loading...</p>;
+      <p className="text-white text-5xl font-semibold py-2">Loading...</p>;
    }
 
    if (status === "failed") {
-      return <p>Failed to load posts.</p>;
+      return (
+         <p className="text-white text-5xl font-semibold py-2">
+            Failed to load posts.
+         </p>
+      );
    }
 
    return (
@@ -29,7 +33,9 @@ const UsersList = () => {
             {users.length > 0 ? (
                users.map((user) => <UserFilter key={user.id} {...user} />)
             ) : (
-               <p>No users available.</p>
+               <p className="text-white text-5xl font-semibold py-2">
+                  No users available.
+               </p>
             )}
          </div>
       </div>

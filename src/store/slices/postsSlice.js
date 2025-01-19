@@ -44,4 +44,8 @@ export const postsSelector = (state) => state.posts.posts;
 export const selectPostById = (state, postId) =>
    state.posts.posts.find((post) => post.id.toString() === postId.toString());
 
+export const getPostsByAuthorId = (state, authorId) =>
+   state.posts.posts.filter(
+      (post) => post.userId.toString() === authorId.toString()
+   );
 export const postsReducer = postsSlice.reducer;
